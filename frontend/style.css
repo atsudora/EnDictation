@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Zen+Antique&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(to left top,
+      #7fccff,
+      #e1f5ff);
+  font-family: "Poppins", sans-serif;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.box {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* 2列に分割 */
+  grid-template-rows: 1fr 1fr;    /* 2行に分割 */
+  gap: 1rem;                      /* グリッドアイテム間の隙間を設定 */
+  justify-items: center;          /* アイテムを各セルの中央に配置 */
+  align-items: center;            /* アイテムを各セルの中央に配置 */
+  margin-top: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgb(93, 183, 235);
+  font-size: 2.0rem;
+  font-weight: 600;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  width: 1000px;
+  min-height: 700px;
+  max-width: 90%;
+  box-shadow: 1px 5px 6px rgb(80, 80, 80)
+}
+
+.container .type-input {
+  margin-top: 4rem;
+  font-size: 2.4rem;
+}
+
+.header {
+  position: absolute;
+  top: 2rem;
+  font-size: 5rem;
+  text-align: center;
+  font-weight: bold;
+  color: blue;
+}
+
+.question-display,
+.translaton-display{
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  height: 140px;
+  background: linear-gradient(to left top,
+  #b4e0fc,
+  #eef9ff);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 1px 1px #b4e0fc;
+  margin-top: auto;
+}
+
+.open-box{
+  font-size: 2.0rem;
+}
+
+.english-display,
+.open-here{
+  margin: 0.5rem 1rem;
+  font-size: 1.8rem;
+}
+.open-here{
+  display:none;
+}
+
+.typing-input {
+  background: transparent;
+  border: 2px solid rgb(53, 72, 81);
+  outline: none;
+  width: 100%;
+  height: 14rem;
+  margin: auto;
+  resize: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn--blue,
+a.btn--blue {
+  color: #fff;
+  background-color: #34559d;
+  width:15rem;
+}
+.btn--blue:hover,
+a.btn--blue:hover {
+  color: #fff;
+  background: #26478d;
+}
+
+a.btn--radius {
+  border-radius: 100vh;
+}
+
+/*
+テスト
+*/
+.correct {
+  color: blue;
+}
+
+.incorrect {
+  color: red;
+}

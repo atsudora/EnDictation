@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Gamet</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="counter" id="counter"></div>
+    <div class="judge" id="judge"></div>
+  </div>
+  <div class="container">
+    <div class="question-display" id="questionDisplay">
+      <div class="english-display" id="englishDisplay"></div>
+    </div>
+    <div class="translaton-display" id="translationDisplay">
+      <span class="open-here" id="openHere"></span>
+    </div>
+    <div class="box">
+      <span class="btn btn--blue btn--radius" id="hidden" onClick='toggleAnswer("switch")''>日本語訳を見る<br>（Enter）</span>
+      <span class="btn btn--blue btn--radius" id="once-again" onClick="playAudioFile()">再生する<br>（space）</span>
+      <span class="btn btn--blue btn--radius" id="once-again" onClick="onceAgain()">もう一度<br>（shift+Back）</span>
+      <span class="btn btn--blue btn--radius" id="next" onClick="nextQuestion()">次へ<br>（shift+Enter）</span>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
