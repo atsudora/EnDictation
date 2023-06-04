@@ -19,9 +19,9 @@ body {
 .btn,
 a.btn,
 button.btn {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.2;
   position: relative;
   display: inline-block;
   padding: 1rem 2rem;
@@ -51,29 +51,30 @@ button.btn {
 }
 
 .container {
+  margin-top:6rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-color: rgb(93, 183, 235);
   font-size: 2.0rem;
   font-weight: 600;
-  padding: 4rem;
+  padding: 4rem 4rem 2rem 4rem;
   border-radius: 0.5rem;
   width: 1000px;
-  min-height: 700px;
+  min-height: 580px;
   max-width: 90%;
   box-shadow: 1px 5px 6px rgb(80, 80, 80)
 }
 
 .container .type-input {
-  margin-top: 4rem;
+  margin-top: 5rem;
   font-size: 2.4rem;
 }
 
 .header {
   position: absolute;
-  top: 2rem;
-  font-size: 5rem;
+  top: 1rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: bold;
   color: blue;
@@ -83,7 +84,7 @@ button.btn {
 .translaton-display{
   margin-bottom: 2rem;
   margin-left: 1rem;
-  height: 140px;
+  height: 120px;
   background: linear-gradient(to left top,
   #b4e0fc,
   #eef9ff);
@@ -99,23 +100,10 @@ button.btn {
 .english-display,
 .open-here{
   margin: 0.5rem 1rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 .open-here{
   display:none;
-}
-
-.typing-input {
-  background: transparent;
-  border: 2px solid rgb(53, 72, 81);
-  outline: none;
-  width: 100%;
-  height: 14rem;
-  margin: auto;
-  resize: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
 }
 
 .btn--blue,
