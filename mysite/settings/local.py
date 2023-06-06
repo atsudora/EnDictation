@@ -1,9 +1,9 @@
 from pathlib import Path
 from decouple import config ## 追加
-from dj_database_url import parse as dburl  ## 追加
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+PARENT_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'app',
-    'webpack_loader',
     'corsheaders',
 ]
 
@@ -69,9 +68,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-default_dburl = 'sqlite:///' + str(BASE_DIR / "db.sqlite3")
 DATABASES = {
-    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),   ## 変更
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'endictation',
+        'USER': 'postgres',
+        'PASSWORD': 'zem8LwNuzXkg',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
@@ -123,13 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%Y/%m/%d %H%M',
-}
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'dist/',
-        'STATS_FILE': BASE_DIR / 'frontend' / 'webpack-stats.json'
-    }
 }
 
 CORS_ORIGIN_ALLOW_ALL = True

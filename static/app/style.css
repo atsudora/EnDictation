@@ -66,9 +66,9 @@ button.btn {
   box-shadow: 1px 5px 6px rgb(80, 80, 80)
 }
 
-.container .type-input {
+.container {
   margin-top: 5rem;
-  font-size: 2.4rem;
+  font-size: 2.0rem;
 }
 
 .header {
@@ -100,7 +100,7 @@ button.btn {
 .english-display,
 .open-here{
   margin: 0.5rem 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .open-here{
   display:none;

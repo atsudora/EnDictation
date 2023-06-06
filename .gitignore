@@ -1,6 +1,8 @@
-myvenv
+myenv
 db.sqlite3
 .vscode
 __pycache__
 *.pyc
 .DS_Store
+
+media

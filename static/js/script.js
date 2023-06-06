@@ -92,6 +92,16 @@ function playAudioFile() {
 }
 
 /**
+ * オーディオファイルを停止する関数
+ */
+function stopAudioFile() {
+  if (audioFile) {
+    audioFile.pause();
+    audioFile.currentTime = 0;
+  }
+}
+
+/**
  * キーボードからの入力を英文を評価する。
  */
 document.addEventListener("keydown", function(event) {
@@ -107,8 +117,10 @@ document.addEventListener("keydown", function(event) {
 
   // エラー処理の追加
   if (englishDisplay.children[currentCharacterIndex]) {
-    console.log(englishDisplay.children[currentCharacterIndex]);
     const currentCharacter = englishDisplay.children[currentCharacterIndex].innerText;
+    console.log("Display: " + currentCharacter);
+    console.log("Input: " + inputCharacter);
+    console.log("Index: :" + currentCharacterIndex)
     if (inputCharacter.toLowerCase() === currentCharacter.toLowerCase()) {
       englishDisplay.children[currentCharacterIndex].style.display = "inline";
       currentCharacterIndex++;
@@ -179,7 +191,6 @@ async function RenderNextSentence() {
     spanField.style.display = "none";  // 初めて非表示にする
     englishDisplay.appendChild(spanField);
   });
-  currentCharacterIndex = 0;
   playAudioFile()
 };
 
@@ -187,19 +198,26 @@ async function RenderNextSentence() {
  * 次の問題に進む
  */
 function nextQuestion(){
+  stopAudioFile();
   RenderNextSentence();
   toggleAnswer("none");
   judge.innerText = ""
+  currentCharacterIndex = 0;
 }
 
 /**
  * もう一度
  */
 function onceAgain() {
-  englishDisplay.style.display = "none";
+  stopAudioFile();
   judge.innerText = "";
   toggleAnswer("none");
   playAudioFile();
+
+  for(let i = 0; i < englishDisplay.children.length; i++) {
+    englishDisplay.children[i].style.display = 'none';
+  };
+  currentCharacterIndex = 0;
 }
 
 /* 英文を呼び出す */
