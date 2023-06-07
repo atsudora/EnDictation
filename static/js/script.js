@@ -87,6 +87,7 @@ function checkAllCharactersDisplayed() {
  */
 function playAudioFile() {
   if (audioFile) {
+    audioFile.currentTime = 0;
     audioFile.play().catch((error) => console.log("Audio file couldn't be played:", error));
   }
 }
