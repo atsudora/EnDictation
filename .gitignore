@@ -6,6 +6,6 @@ __pycache__
 .DS_Store
 .env
 
-media
+media/audio_files/*.mp3
 
 *.log*
