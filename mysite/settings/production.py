@@ -2,7 +2,7 @@ import os
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com', 'your-render-service-url.onrender.com']
+ALLOWED_HOSTS = ['endictation.onrender.com']
 
 DATABASES = {
     'default': {
