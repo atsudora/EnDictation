@@ -2,7 +2,7 @@ import os
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS = ['endictation.onrender.com']
+ALLOWED_HOSTS = ['endictation.onrender.com', '127.0.0.1']
 
 DATABASES = {
     'default': {
