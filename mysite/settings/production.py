@@ -18,7 +18,7 @@ DATABASES = {
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # Static and media files
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+MEDIA_ROOT = str(BASE_DIR / 'media')
 
 # Rest of your production settings...
