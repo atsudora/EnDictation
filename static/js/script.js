@@ -1,4 +1,4 @@
-const RANDUM_SENTENCE_RUL_API = "http://127.0.0.1:8000/api/dictation/random/";
+const RANDUM_SENTENCE_RUL_API = "http://endictation.onrender.com/api/dictation/random/";
 const typingInput = document.getElementById("typingInput")
 const openHere = document.getElementById("openHere")
 const counter = document.getElementById("counter")
