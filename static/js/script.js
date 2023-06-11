@@ -5,9 +5,9 @@ const counter = document.getElementById("counter")
 const hidden = document.getElementById("hidden")
 const judge = document.getElementById("judge")
 
-const typingSound = new Audio("./audio/audio_typing-sound.mp3");
-const correctSound = new Audio("./audio/audio_correct.mp3");
-const wrongSound = new Audio("./audio/audio_wrong.mp3");
+const typingSound = new Audio("/static/app/audio/audio_typing-sound.mp3");
+const correctSound = new Audio("/static/app/audio/audio_correct.mp3");
+const wrongSound = new Audio("/static/app/audio/audio_wrong.mp3");
 
 let audioFile;
 let englishDisplay = document.getElementById("englishDisplay")
