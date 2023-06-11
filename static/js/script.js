@@ -120,9 +120,9 @@ document.addEventListener("keydown", function(event) {
   // エラー処理の追加
   if (englishDisplay.children[currentCharacterIndex]) {
     const currentCharacter = englishDisplay.children[currentCharacterIndex].innerText;
-    console.log("Display: " + currentCharacter);
-    console.log("Input: " + inputCharacter);
-    console.log("Index: :" + currentCharacterIndex)
+    // console.log("Display: " + currentCharacter);
+    // console.log("Input: " + inputCharacter);
+    // console.log("Index: :" + currentCharacterIndex)
     if (inputCharacter.toLowerCase() === currentCharacter.toLowerCase()) {
       englishDisplay.children[currentCharacterIndex].style.display = "inline";
       currentCharacterIndex++;
@@ -135,8 +135,8 @@ document.addEventListener("keydown", function(event) {
     // 次の文字がスペース,?,!,',.,の場合、表示する
     const nextCharacter = englishDisplay.children[currentCharacterIndex].innerText;
     if (exclude_pattern.includes(nextCharacter)) {
-      console.log(currentCharacterIndex);
-      console.log(nextCharacter);
+      // console.log(currentCharacterIndex);
+      // console.log(nextCharacter);
       englishDisplay.children[currentCharacterIndex].style.display = "inline";
       currentCharacterIndex++;
     }
