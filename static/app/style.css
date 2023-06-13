@@ -16,15 +16,78 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.header {
+  position: absolute;
+  top: 0.6rem;
+  font-size: 3.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: blue;
+}
+
+.container {
+  margin-top:3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgb(93, 183, 235);
+  font-size: 2.0rem;
+  font-weight: 600;
+  padding: 1rem 4rem 1rem 4rem;
+  border-radius: 0.8rem;
+  width: 100%; /* from 1000px to 100% */
+  max-width: 90%; /* keep this to prevent over-sizing */
+  min-height: 560px;
+  max-width: 90%;
+  box-shadow: 1px 5px 6px rgb(80, 80, 80)
+}
+
+.english-display,
+.open-here{
+  margin: 0.5rem 1rem;
+  font-size: 1.4rem;
+}
+
+.question-display,
+.translaton-display{
+  margin-bottom: 2rem;
+  height: 120px;
+  background: linear-gradient(to left top,
+    #b4e0fc,
+    #eef9ff);
+  border-radius: 0.8rem;
+  box-shadow: 1px 1px 1px 1px #b4e0fc;
+  margin-top: auto;
+  width: 100%;
+}
+
+.open-box{
+  font-size: 2.0rem;
+}
+
+.open-here{
+  display:none;
+}
+
+.box {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr; /* 3列に分割 */
+  grid-template-rows: 1fr 1fr;    /* 2行に分割 */
+  gap: 0.6rem;                      /* グリッドアイテム間の隙間を設定 */
+  justify-items: center;          /* アイテムを各セルの中央に配置 */
+  align-items: center;            /* アイテムを各セルの中央に配置 */
+  margin-top: auto;
+}
+
 .btn,
 a.btn,
 button.btn {
-  font-size: 1.0rem;
+  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.2;
   position: relative;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.7rem 1.8rem;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -37,73 +100,7 @@ button.btn {
   text-decoration: none;
   letter-spacing: 0.1em;
   color: #212529;
-  border-radius: 0.5rem;
-}
-
-.box {
-	display: grid;
-	grid-template-columns: 1fr 1fr; /* 2列に分割 */
-  grid-template-rows: 1fr 1fr;    /* 2行に分割 */
-  gap: 1rem;                      /* グリッドアイテム間の隙間を設定 */
-  justify-items: center;          /* アイテムを各セルの中央に配置 */
-  align-items: center;            /* アイテムを各セルの中央に配置 */
-  margin-top: auto;
-}
-
-.container {
-  margin-top:6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: rgb(93, 183, 235);
-  font-size: 2.0rem;
-  font-weight: 600;
-  padding: 4rem 4rem 2rem 4rem;
-  border-radius: 0.5rem;
-  width: 1000px;
-  min-height: 580px;
-  max-width: 90%;
-  box-shadow: 1px 5px 6px rgb(80, 80, 80)
-}
-
-.container {
-  margin-top: 5rem;
-  font-size: 2.0rem;
-}
-
-.header {
-  position: absolute;
-  top: 1rem;
-  font-size: 4rem;
-  text-align: center;
-  font-weight: bold;
-  color: blue;
-}
-
-.question-display,
-.translaton-display{
-  margin-bottom: 2rem;
-  margin-left: 1rem;
-  height: 120px;
-  background: linear-gradient(to left top,
-  #b4e0fc,
-  #eef9ff);
-  border-radius: 0.5rem;
-  box-shadow: 1px 1px 1px 1px #b4e0fc;
-  margin-top: auto;
-}
-
-.open-box{
-  font-size: 2.0rem;
-}
-
-.english-display,
-.open-here{
-  margin: 0.5rem 1rem;
-  font-size: 1.4rem;
-}
-.open-here{
-  display:none;
+  border-radius: 0.8rem;
 }
 
 .btn--blue,
@@ -112,6 +109,7 @@ a.btn--blue {
   background-color: #34559d;
   width:15rem;
 }
+
 .btn--blue:hover,
 a.btn--blue:hover {
   color: #fff;
@@ -131,4 +129,36 @@ a.btn--radius {
 
 .incorrect {
   color: red;
+}
+
+@media (max-width: 600px) {
+  body {
+    overflow: auto;
+    height: 100%;
+  }
+  .header {
+    top: 0.25rem;
+    font-size: 2.4rem;
+  }
+  .container {
+    margin-top:5rem;
+    padding: 2rem 2rem;
+  }
+  .english-display,
+  .open-here{
+    font-size: 1.1rem;
+  }
+  .box {
+    grid-template-columns: 1fr;
+  }
+  .btn,
+  a.btn,
+  button.btn {
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  .btn--blue,
+  a.btn--blue {
+    width:100%;
+  }
 }

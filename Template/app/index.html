@@ -22,8 +22,7 @@
 
 <body>
   <div class="header">
-    <div class="counter" id="counter"></div>
-    <div class="judge" id="judge"></div>
+    <div class="question-number" id="questionNumber"></div>
   </div>
   <div class="container">
     <div class="question-display" id="questionDisplay">
@@ -35,7 +34,8 @@
     <div class="box">
       <span class="btn btn--blue btn--radius" id="hidden" onClick='toggleAnswer("switch")''>日本語訳を見る<br>（Enter）</span>
       <span class="btn btn--blue btn--radius" id="once-again" onClick="playAudioFile()">再生する<br>（space）</span>
-      <span class="btn btn--blue btn--radius" id="once-again" onClick="onceAgain()">もう一度<br>（shift+Back）</span>
+      <span class="btn btn--blue btn--radius" id="hint" onClick="hintDisplay()">1文字ヒント<br>（shift+Back）</span>
+      <span class="btn btn--blue btn--radius" id="once-again" >もう一度<br>　</span>
       <span class="btn btn--blue btn--radius" id="next" onClick="nextQuestion()">次へ<br>（shift+Enter）</span>
     </div>
   </div>
