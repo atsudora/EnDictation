@@ -2,9 +2,8 @@ const RANDUM_SENTENCE_RUL_API = "https://endictation.onrender.com/api/dictation/
 
 const typingInput = document.getElementById("typingInput")
 const openHere = document.getElementById("openHere")
-const counter = document.getElementById("counter")
+const questionNumber = document.getElementById("questionNumber")
 const hidden = document.getElementById("hidden")
-const judge = document.getElementById("judge")
 
 const typingSound = new Audio("/static/app/audio/audio_typing-sound.mp3");
 const correctSound = new Audio("/static/app/audio/audio_correct.mp3");
@@ -38,7 +37,7 @@ document.addEventListener("keyup", function(event) {
     toggleAnswer("switch");
   }
   if (event.key == 'Backspace' && event.shiftKey || event.key == 'Delete' && event.shiftKey) {
-    onceAgain();
+    hintDisplay();
   }
   if (event.code == 'Space') {
     playAudioFile();
@@ -104,6 +103,34 @@ function stopAudioFile() {
 }
 
 /**
+ * // 次の文字がスペース,?,!,',.,の場合、表示する関数
+ */
+function skipCharacter() {
+  const nextCharacter = englishDisplay.children[currentCharacterIndex].innerText;
+  if (exclude_pattern.includes(nextCharacter)) {
+    // console.log(currentCharacterIndex);
+    // console.log(nextCharacter);
+    englishDisplay.children[currentCharacterIndex].style.display = "inline";
+    currentCharacterIndex++;
+  }
+}
+
+/**
+ * 全ての文字が表示されていた場合に正解ですと返す。
+ *   */
+function responseCorrectDisplayIfAllOK() {
+  // 全ての文字が表示されているか確認する
+  if(checkAllCharactersDisplayed()) {
+    // エラー処理の追加
+    correctSound.volume = 0.4;
+    correctSound.currentTime = 0;
+    correctSound.play().catch((error) => console.log("Sound couldn't be played:", error));
+    questionNumber.innerText += ' Good!!';
+    toggleAnswer("inline-block");
+  }
+}
+
+/**
  * キーボードからの入力を英文を評価する。
  */
 document.addEventListener("keydown", function(event) {
@@ -132,23 +159,9 @@ document.addEventListener("keydown", function(event) {
       wrongSound.currentTime = 0;
       wrongSound.play().catch((error) => console.log("Sound couldn't be played:", error));
     }
-    // 次の文字がスペース,?,!,',.,の場合、表示する
-    const nextCharacter = englishDisplay.children[currentCharacterIndex].innerText;
-    if (exclude_pattern.includes(nextCharacter)) {
-      // console.log(currentCharacterIndex);
-      // console.log(nextCharacter);
-      englishDisplay.children[currentCharacterIndex].style.display = "inline";
-      currentCharacterIndex++;
-    }
-    // 全ての文字が表示されているか確認する
-    if(checkAllCharactersDisplayed()) {
-      // エラー処理の追加
-      correctSound.volume = 0.4;
-      correctSound.currentTime = 0;
-      correctSound.play().catch((error) => console.log("Sound couldn't be played:", error));
-      judge.innerText = "正解です！";  // すべての文字が表示されている場合
-      toggleAnswer("inline-block");
-    }
+
+    skipCharacter();
+    responseCorrectDisplayIfAllOK();
   }
 });
 
@@ -178,7 +191,7 @@ function GetRandomSentence() {
  */
 async function RenderNextSentence() {
   count++;
-  counter.innerText = 'Question: ' + count;
+  questionNumber.innerText = 'Question: ' + count;
   
   const sentence = await GetRandomSentence();
   englishDisplay.innerText = "";
@@ -193,6 +206,7 @@ async function RenderNextSentence() {
     spanField.style.display = "none";  // 初めて非表示にする
     englishDisplay.appendChild(spanField);
   });
+  
   playAudioFile()
 };
 
@@ -203,7 +217,6 @@ function nextQuestion(){
   stopAudioFile();
   RenderNextSentence();
   toggleAnswer("none");
-  judge.innerText = ""
   currentCharacterIndex = 0;
 }
 
@@ -220,6 +233,19 @@ function onceAgain() {
     englishDisplay.children[i].style.display = 'none';
   };
   currentCharacterIndex = 0;
+}
+
+/**
+ * ヒント表示
+ */
+function hintDisplay() {
+  var targetElement = englishDisplay.children[currentCharacterIndex];
+  targetElement.style.display = "inline";
+  targetElement.style.color = "red";
+  currentCharacterIndex++;
+
+  skipCharacter();
+  responseCorrectDisplayIfAllOK();
 }
 
 /* 英文を呼び出す */
