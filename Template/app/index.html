@@ -9,6 +9,7 @@
   <title>EnDictation</title>
   <link rel="stylesheet" href='{% static "app/style.css" %}'>
   <link rel="icon" type="image/x-icon" href='{% static "app/icon/favicon.ico" %}'>
+  <script src="https://kit.fontawesome.com/e6c649a282.js" crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HLPKKVHQE"></script>
   <script>
@@ -25,6 +26,7 @@
     <div class="question-number" id="questionNumber"></div>
   </div>
   <div class="container">
+    <p class="explanation"><i class="fa-regular fa-comment-dots"></i> 再生される英語音声に従って、その内容をキーボードからタイピングしてください。 ※PC推奨</p>
     <div class="question-display" id="questionDisplay">
       <div class="english-display" id="englishDisplay"></div>
     </div>
@@ -32,11 +34,11 @@
       <span class="open-here" id="openHere"></span>
     </div>
     <div class="box">
-      <span class="btn btn--blue btn--radius" id="hidden" onClick='toggleAnswer("switch")''>日本語訳を見る<br>（Enter）</span>
-      <span class="btn btn--blue btn--radius" id="once-again" onClick="playAudioFile()">再生する<br>（space）</span>
-      <span class="btn btn--blue btn--radius" id="hint" onClick="hintDisplay()">1文字ヒント<br>（shift+Back）</span>
-      <span class="btn btn--blue btn--radius" id="once-again" >もう一度<br>　</span>
-      <span class="btn btn--blue btn--radius" id="next" onClick="nextQuestion()">次へ<br>（shift+Enter）</span>
+      <span class="btn btn--blue btn--radius" id="hidden" onClick='toggleAnswer("switch")'>日本語訳を見る  <i class="fa-solid fa-toggle-on"></i><br>（Enter）</span>
+      <span class="btn btn--blue btn--radius" id="once-again" onClick="playAudioFile()">再生する <i class="fa-solid fa-microphone"></i><br>（space）</span>
+      <span class="btn btn--blue btn--radius" id="hint" onClick="hintDisplay()">1文字ヒント <i class="fa-solid fa-question"></i><br>（shift+Back）</span>
+      <span class="btn btn--blue btn--radius" id="once-again" >もう一度 <i class="fa-solid fa-repeat"></i><br>　</span>
+      <span class="btn btn--blue btn--radius" id="next" onClick="nextQuestion()">次へ <i class="fa-solid fa-arrow-right-long"></i><br>（shift+Enter）</span>
     </div>
   </div>
 

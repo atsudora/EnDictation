@@ -24,8 +24,8 @@ const exclude_pattern =[
   '！',
 ]
 
-const open_text = "日本語訳を見る<br>（Enter）";
-const close_text = "日本語訳を隠す<br>（Enter）";
+const open_text = '日本語訳を見る <i class="fa-solid fa-toggle-on"></i><br>（Enter）';
+const close_text = '日本語訳を隠す <i class="fa-solid fa-toggle-off"></i><br>（Enter）';
 
 /**
  * ショートカットキー
@@ -225,7 +225,6 @@ function nextQuestion(){
  */
 function onceAgain() {
   stopAudioFile();
-  judge.innerText = "";
   toggleAnswer("none");
   playAudioFile();
 
