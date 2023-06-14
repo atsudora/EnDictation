@@ -142,16 +142,21 @@ a.btn--radius {
     height: 100%;
   }
   .header {
-    top: 0.25rem;
+    top: 0.2rem;
     font-size: 2.4rem;
   }
   .container {
-    margin-top:5rem;
-    padding: 2rem 2rem;
+    margin-top:4rem;
+    padding: 1rem 2rem;
+  }
+  .question-display,
+  .translaton-display {
+    margin-bottom: 1rem;
   }
   .english-display,
   .open-here{
-    font-size: 1.1rem;
+    height: 150px;
+    font-size: 1.0rem;
   }
   .box {
     grid-template-columns: 1fr;
