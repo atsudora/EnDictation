@@ -42,6 +42,9 @@ document.addEventListener("keyup", function(event) {
   if (event.code == 'Space') {
     playAudioFile();
   }
+  if (event.key == 'Backspace' && event.ctrlKey || event.key == 'Delete' && event.ctrlKey) {
+    onceAgain();
+  }
 });
 
 /**
