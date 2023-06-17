@@ -18,7 +18,7 @@ class Dictation(models.Model):
     blank=False,
     null=False,
     default=0,
-    validators=[validators.MinValueValidator(0),validators.MaxValueValidator(3)])
+    validators=[validators.MinValueValidator(0),validators.MaxValueValidator(8)])
   audio_file = models.FileField(
     '音声ファイル',
     upload_to='audio_files/',
