@@ -1,36 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Zen+Antique&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: linear-gradient(to left top,
-      #7fccff,
-      #e1f5ff);
-  font-family: "Poppins", sans-serif;
-}
-
-.header {
-  position: absolute;
-  top: 0.6rem;
-  font-size: 3.5rem;
-  text-align: center;
-  font-weight: bold;
-  color: blue;
-}
-
 .container {
-  margin-top:3.5rem;
+  margin:5rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: rgb(93, 183, 235);
+  background-color: var(--secondary-color);
   font-size: 2.0rem;
   font-weight: 600;
   padding: 1rem 4rem 1rem 4rem;
@@ -50,6 +23,10 @@ body {
 .english-display,
 .open-here{
   margin: 0.5rem 1rem;
+  font-size: 1.3rem;
+}
+
+.english-display {
   font-size: 1.4rem;
 }
 
@@ -57,17 +34,13 @@ body {
 .translaton-display{
   height: 120px;
   background: linear-gradient(to left top,
-    #b4e0fc,
-    #eef9ff);
+    var(--secondary-color),
+    white);
   border-radius: 0.8rem;
-  box-shadow: 1px 1px 1px 1px #b4e0fc;
+  box-shadow: 2px 2px 2px 2px var(--main-color);
   margin-top: auto;
   margin-bottom: auto;
   width: 100%;
-}
-
-.open-box{
-  font-size: 2.0rem;
 }
 
 .open-here{
@@ -110,15 +83,15 @@ button.btn {
 
 .btn--blue,
 a.btn--blue {
-  color: #fff;
-  background-color: #34559d;
+  color: white;
+  background-color: var(--main-color);
   width:15rem;
 }
 
 .btn--blue:hover,
 a.btn--blue:hover {
-  color: #fff;
-  background: #26478d;
+  color: white;
+  background: var(--main-color);
 }
 
 a.btn--radius {
@@ -129,7 +102,7 @@ a.btn--radius {
 テスト
 */
 .correct {
-  color: blue;
+  color: var(--main-color);
 }
 
 .incorrect {
