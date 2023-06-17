@@ -37,10 +37,11 @@ body {
 
 .header {
   position: absolute;
-  top: 0.6rem;
+  top: 0.4rem;
   font-size: 3.5rem;
   text-align: center;
   font-weight: bold;
   color: var(--main-color);
   z-index: 10;
+  height: 4.4rem;
 }

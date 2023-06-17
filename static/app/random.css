@@ -1,5 +1,9 @@
+body {
+  height: 100vh;
+}
+
 .container {
-  margin:5rem 0rem;
+  margin:4rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -10,7 +14,7 @@
   border-radius: 0.8rem;
   width: 100%; /* from 1000px to 100% */
   max-width: 90%; /* keep this to prevent over-sizing */
-  min-height: 560px;
+  min-height: 520px;
   max-width: 90%;
   box-shadow: 1px 5px 6px rgb(80, 80, 80)
 }
@@ -107,6 +111,22 @@ a.btn--radius {
 
 .incorrect {
   color: red;
+}
+
+@media (min-width: 1281px) {
+  .container {
+    min-height: 800px;
+  }
+
+  .question-display,
+  .translaton-display{
+    height: 200px;
+  }
+
+  .english-display,
+  .open-here{
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 600px) {
