@@ -1,48 +1,40 @@
+{% extends 'app/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ja">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EnDictation</title>
-  <link rel="stylesheet" href='{% static "app/style.css" %}'>
-  <link rel="icon" type="image/x-icon" href='{% static "app/icon/favicon.ico" %}'>
-  <script src="https://kit.fontawesome.com/e6c649a282.js" crossorigin="anonymous"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HLPKKVHQE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+{% block title %}EnDictation{% endblock %}
 
-    gtag('config', 'G-4HLPKKVHQE');
-  </script>
-</head>
+{% block extrahead %}
+<link rel="stylesheet" href='{% static "app/index.css" %}'>
+{% endblock %}
 
-<body>
-  <div class="header">
-    <div class="question-number" id="questionNumber"></div>
+{% block header %}
+<div class="site-title" id="siteTitle">EnDictation</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="explanation-box">
+    <i class="fa-regular fa-comment-dots"></i> 
+    <details class="accordion-008">
+      <summary>どのようなサイトですか？</summary>
+      <p>このサイトは英語ディクテーションサイトです。<br>
+        再生される英語音声に従って、その内容をキーボードからタイピングしてください。<br>
+        ※PC推奨</p>
+    </details>
+    <details class="accordion-008">
+      <summary>どのような特徴がありますか？</summary>
+      <p>Lesson一覧の問題をクリックすると、ディテーションを開始します。<br>
+        まず英語の音声が再生されます。あなたは聞き取れた単語をキーボードから入力してください。<br>
+        入力された文字はすぐに正しいか判定されます。</p>
+    </details>
   </div>
-  <div class="container">
-    <p class="explanation"><i class="fa-regular fa-comment-dots"></i> 再生される英語音声に従って、その内容をキーボードからタイピングしてください。 ※PC推奨</p>
-    <div class="question-display" id="questionDisplay">
-      <div class="english-display" id="englishDisplay"></div>
+  <div class="lesson-box">
+    <div class="lesson-title">
+      Lesson一覧
     </div>
-    <div class="translaton-display" id="translationDisplay">
-      <span class="open-here" id="openHere"></span>
-    </div>
-    <div class="box">
-      <span class="btn btn--blue btn--radius" id="hidden" onClick='toggleAnswer("switch")'>日本語訳を見る  <i class="fa-solid fa-toggle-on"></i><br>（Enter）</span>
-      <span class="btn btn--blue btn--radius" id="once-again" onClick="playAudioFile()">再生する <i class="fa-solid fa-microphone"></i><br>（space）</span>
-      <span class="btn btn--blue btn--radius" id="hint" onClick="hintDisplay()">1文字ヒント <i class="fa-solid fa-question"></i><br>（shift+Back）</span>
-      <span class="btn btn--blue btn--radius" id="once-again" onClick="onceAgain()">もう一度 <i class="fa-solid fa-repeat"></i><br>（ctrl+Back）</span>
-      <span class="btn btn--blue btn--radius" id="next" onClick="nextQuestion()">次へ <i class="fa-solid fa-arrow-right-long"></i><br>（shift+Enter）</span>
+    <div class="lesson-bar">
+      <a class="btn" id="random" href="/random/">ランダム問題を開始する</a>
     </div>
   </div>
-
-  <script src="{% static 'js/script.js' %}"></script>
-</body>
-
-</html>
+</div>
+{% endblock %}

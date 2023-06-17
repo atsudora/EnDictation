@@ -1,0 +1,128 @@
+body {
+  overflow: auto;
+  min-height: 100vh;
+  background: linear-gradient(to left top,
+      var(--backgroud-color),
+      white);
+  padding-top: 5rem;
+}
+
+.container {
+  margin: 1.0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.explanation-box {
+  margin:2.0rem 0rem;
+  border-radius: 0.8rem;
+  width: 100%; /* keep this to prevent over-sizing */
+  min-height: 280px;
+  max-height: 600px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1rem 4rem;
+}
+
+.lesson-box {
+  margin:2rem 0rem;
+  color: rgb(46, 46, 46);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.lesson-title {
+  font-size: 2.2rem;
+  color: rgb(84, 84, 84);
+}
+
+.lesson-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--main-color);
+  margin-top:1.0rem;
+  border-radius: 0.5rem;
+  height: 3rem;
+}
+.btn {
+  color:white;
+  text-decoration:none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-008 {
+  max-width: 500px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 7px 15px -5px rgb(0 0 0 / 5%);
+  background-color: #fff;
+}
+
+.accordion-008 summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 2em;
+  color: #333333;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.accordion-008 summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-008 summary::after {
+  transform: translateY(-25%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  margin-left: 10px;
+  border-bottom: 3px solid #333333b3;
+  border-right: 3px solid #333333b3;
+  content: '';
+  transition: transform .3s;
+}
+
+.accordion-008[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.accordion-008 p {
+  transform: translateY(-10px);
+  opacity: 0;
+  margin: 0;
+  padding: .3em 2em 1.5em;
+  color: rgb(84, 84, 84);
+  transition: transform .5s, opacity .5s;
+  font-size: 1.0rem;
+}
+
+.accordion-008[open] p {
+  transform: none;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  body {
+    overflow: auto;
+    height: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+  
+  .explanation-box {
+    min-height: 280px;
+    max-height: 1200px;
+  }
+}

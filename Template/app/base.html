@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}EnDictation{% endblock %}</title>
+  <link rel="stylesheet" href='{% static "app/base.css" %}'>
+  <link rel="icon" type="image/x-icon" href='{% static "app/icon/favicon.ico" %}'>
+  <script src="https://kit.fontawesome.com/e6c649a282.js" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HLPKKVHQE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4HLPKKVHQE');
+  </script>
+  {% block extrahead %}{% endblock %}
+</head>
+
+<body>
+  {% block navigation %}{% endblock %}
+  <div class="header">
+    {% block header %}{% endblock %}
+  </div>
+
+  {% block content %}{% endblock %}
+
+  <script src="{% static 'js/script.js' %}"></script>
+  {% block extrascripts %}{% endblock %}
+</body>
+
+</html>

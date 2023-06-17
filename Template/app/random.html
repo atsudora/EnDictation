@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}EnDictation{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" href='{% static "app/random.css" %}'>
+{% endblock %}
+
+{% block navigation %}
+<a class="home-btn" id="homeBtn" href="/"><i class="fa-solid fa-house fa-xl"></i></a>
+{% endblock %}
+
+{% block header %}
+<div class="question-number" id="questionNumber"></div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <p class="explanation"><i class="fa-regular fa-comment-dots"></i> 再生される英語音声に従って、その内容をキーボードからタイピングしてください。 ※PC推奨</p>
+  <div class="question-display" id="questionDisplay">
+    <div class="english-display" id="englishDisplay"></div>
+  </div>
+  <div class="translaton-display" id="translationDisplay">
+    <span class="open-here" id="openHere"></span>
+  </div>
+  <div class="box">
+    <span class="btn btn--blue btn--radius" id="hidden" onClick='toggleAnswer("switch")'>日本語訳を見る  <i class="fa-solid fa-toggle-on"></i><br>（Enter）</span>
+    <span class="btn btn--blue btn--radius" id="once-again" onClick="playAudioFile()">再生する <i class="fa-solid fa-microphone"></i><br>（space）</span>
+    <span class="btn btn--blue btn--radius" id="hint" onClick="hintDisplay()">1文字ヒント <i class="fa-solid fa-question"></i><br>（shift+Back）</span>
+    <span class="btn btn--blue btn--radius" id="once-again" onClick="onceAgain()">もう一度 <i class="fa-solid fa-repeat"></i><br>（ctrl+Back）</span>
+    <span class="btn btn--blue btn--radius" id="next" onClick="nextQuestion()">次へ <i class="fa-solid fa-arrow-right-long"></i><br>（shift+Enter）</span>
+  </div>
+</div>
+{% endblock %}
