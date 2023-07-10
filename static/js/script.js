@@ -56,6 +56,12 @@ function addSentenceToDisplay(sentence) {
   }
 }
 
+function playSound(audio) {
+  audio.volume = 0.4;
+  audio.currentTime = 0;
+  audio.play().catch(console.log);
+}
+
 function playAudioFile() {
   if (audioFile) {
     audioFile.currentTime = 0;
@@ -67,6 +73,14 @@ function stopAudioFile() {
   if (audioFile) {
     audioFile.pause();
     audioFile.currentTime = 0;
+  }
+}
+
+function skipCharacter() {
+  const nextCharacter = englishDisplay.children[currentCharacterIndex].innerText;
+  if (exclude_pattern.includes(nextCharacter)) {
+    englishDisplay.children[currentCharacterIndex].style.display = "inline";
+    currentCharacterIndex++;
   }
 }
 
@@ -116,12 +130,6 @@ function evaluateTyping(event) {
 
   skipCharacter();
   responseCorrectDisplayIfAllOK();
-}
-
-function playSound(audio) {
-  audio.volume = 0.4;
-  audio.currentTime = 0;
-  audio.play().catch(console.log);
 }
 
 // Initialize first sentence
