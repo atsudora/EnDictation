@@ -56,6 +56,21 @@ function addSentenceToDisplay(sentence) {
   }
 }
 
+/**
+ * 全ての文字が表示されていた場合に正解ですと返す。
+ *   */
+function responseCorrectDisplayIfAllOK() {
+  // 全ての文字が表示されているか確認する
+  if(checkAllCharactersDisplayed()) {
+    // エラー処理の追加
+    correctSound.volume = 0.4;
+    correctSound.currentTime = 0;
+    correctSound.play().catch((error) => console.log("Sound couldn't be played:", error));
+    questionNumber.innerText += ' Good!!';
+    toggleAnswer("inline-block");
+  }
+}
+
 function playSound(audio) {
   audio.volume = 0.4;
   audio.currentTime = 0;
