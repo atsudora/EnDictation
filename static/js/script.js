@@ -132,6 +132,26 @@ function evaluateTyping(event) {
   responseCorrectDisplayIfAllOK();
 }
 
+function toggleAnswer(display) {
+  for (var i = 0; i < obj.length; i++) {
+    obj[i].style.display = display;
+    hidden.innerHTML = display === "none" ? open_text : close_text;
+  };
+  if(display == "switch"){
+    for(var i=0;i<obj.length;i++){
+      //非表示ならインライン要素に変更。表示状態なら非表示に変更。
+      if(obj[i].style.display == "inline-block"){
+          obj[i].style.display = "none";
+          hidden.innerHTML = open_text;
+      }
+      else{
+          obj[i].style.display = "inline-block";
+          hidden.innerHTML = close_text;
+      }
+  };
+  }
+};
+
 // Initialize first sentence
 RenderNextSentence();
 
