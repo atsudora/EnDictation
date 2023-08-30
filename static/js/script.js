@@ -9,7 +9,7 @@ const typingSound = new Audio("/static/app/audio/audio_typing-sound.mp3");
 const correctSound = new Audio("/static/app/audio/audio_correct.mp3");
 const wrongSound = new Audio("/static/app/audio/audio_wrong.mp3");
 
-const exclude_pattern = [' ', '?', '!', '\'', '.', ',', '？', '！'];
+const exclude_pattern = [' ', '?', '!', '\'', '.', ',', '？', '！', '-'];
 const open_text = '日本語訳を見る <i class="fa-solid fa-toggle-on"></i><br>（Enter）';
 const close_text = '日本語訳を隠す <i class="fa-solid fa-toggle-off"></i><br>（Enter）';
 
