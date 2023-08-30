@@ -57,6 +57,18 @@ function addSentenceToDisplay(sentence) {
 }
 
 /**
+ * 全ての文字が正解したかを確認する関数
+ */
+function checkAllCharactersDisplayed() {
+  for(let i = 0; i < englishDisplay.children.length; i++) {
+    if(englishDisplay.children[i].style.display === 'none') {
+      return false; // 未表示の文字がある場合はfalseを返す
+    }
+  }
+  return true; // すべての文字が表示されている場合はtrueを返す
+}
+
+/**
  * 全ての文字が表示されていた場合に正解ですと返す。
  *   */
 function responseCorrectDisplayIfAllOK() {
