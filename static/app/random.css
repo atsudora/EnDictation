@@ -115,7 +115,7 @@ a.btn--radius {
 
 @media (min-width: 1281px) {
   .container {
-    min-height: 800px;
+    min-height: 600px;
   }
 
   .question-display,
