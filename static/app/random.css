@@ -115,17 +115,17 @@ a.btn--radius {
 
 @media (min-width: 1281px) {
   .container {
-    min-height: 600px;
+    min-height: 580px;
   }
 
   .question-display,
   .translaton-display{
-    height: 200px;
+    height: 150px;
   }
 
   .english-display,
   .open-here{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -136,7 +136,7 @@ a.btn--radius {
   }
   .header {
     top: 0.2rem;
-    font-size: 2.4rem;
+    font-size: 2.0rem;
   }
   .container {
     margin-top:4rem;
