@@ -18,6 +18,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'app',
     'corsheaders',
+    'django.contrib.sites', # サイト管理用ツール
+    'django.contrib.sitemaps',  # サイトマップ作成用ツール
 ]
 
 MIDDLEWARE = [
@@ -157,3 +159,6 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+# siteフレームワーク
+SITE_ID = 1
