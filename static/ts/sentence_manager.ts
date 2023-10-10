@@ -1,4 +1,4 @@
-import { RANDUM_SENTENCE_RUL_API } from "./constracts";
+import { RANDUM_SENTENCE_RUL_API, EXCLUDE_PATTERN } from "./constracts";
 
 interface Sentence {
 	english: string;
@@ -11,7 +11,7 @@ export class SentenceManager {
 	private englishDisplay: HTMLElement;
 	private openHere: HTMLElement;
 	private questionNumber: HTMLElement;
-	private currentCharacterIndex: number;
+	public currentCharacterIndex: number;
 
 	constructor(
 		englishDisplay: HTMLElement,
@@ -36,6 +36,22 @@ export class SentenceManager {
 
 		console.log(sentence.english);
 		this.addSentenceToDisplay(sentence.english);
+	}
+
+	public skipCharacter(): boolean {
+		const nextCharacter =
+			this.englishDisplay.children[this.currentCharacterIndex]
+				.textContent;
+		if (EXCLUDE_PATTERN.includes(nextCharacter || "")) {
+			(
+				this.englishDisplay.children[
+					this.currentCharacterIndex
+				] as HTMLElement
+			).style.display = "inline";
+			this.currentCharacterIndex++;
+			return true;
+		}
+		return false;
 	}
 
 	private async fetchRandomSentence(): Promise<Sentence | undefined> {
