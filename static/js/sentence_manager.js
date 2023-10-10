@@ -25,12 +25,12 @@ export class SentenceManager {
             const response = await fetch(RANDUM_SENTENCE_RUL_API);
             if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
-            return { 
-                english: data.english_sentence, 
-                japanese: data.japanese_sentence, 
-                audio: data.audio_file 
+            return {
+                english: data.english_sentence,
+                japanese: data.japanese_sentence,
+                audio: data.audio_file
             };
-        } catch(error) {
+        } catch (error) {
             console.error('There has been a problem with your fetch operation:', error);
         }
     }

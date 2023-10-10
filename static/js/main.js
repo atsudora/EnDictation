@@ -1,5 +1,5 @@
-import { SentenceManager } from './SentenceManager.js';
-import { InputManager } from './InputManager.js';
+import { SentenceManager } from './sentence_manager.js';
+import { InputManager } from './input_manager.js';
 
 const englishDisplay = document.getElementById("englishDisplay");
 const openHere = document.getElementById("openHere");
@@ -11,5 +11,5 @@ const inputManager = new InputManager(englishDisplay);
 sentenceManager.RenderNextSentence();
 
 document.addEventListener("keydown", (event) => {
-    inputManager.evaluateTyping(event.key);
+  inputManager.evaluateTyping(event.key);
 });
