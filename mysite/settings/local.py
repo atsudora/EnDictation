@@ -27,3 +27,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Rest of your local settings...
+RANDUM_SENTENCE_URL_API = env("RANDUM_SENTENCE_URL_API")

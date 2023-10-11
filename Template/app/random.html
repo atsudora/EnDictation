@@ -25,11 +25,14 @@
     <span class="open-here" id="openHere"></span>
   </div>
   <div class="box">
-    <span class="btn btn--blue btn--radius" id="hidden" onClick='toggleAnswer("switch")'>日本語訳を見る  <i class="fa-solid fa-toggle-on"></i><br>（Enter）</span>
-    <span class="btn btn--blue btn--radius" id="once-again" onClick="playAudioFile()">再生する <i class="fa-solid fa-microphone"></i><br>（space）</span>
-    <span class="btn btn--blue btn--radius" id="hint" onClick="hintDisplay()">1文字ヒント <i class="fa-solid fa-question"></i><br>（shift+Back）</span>
-    <span class="btn btn--blue btn--radius" id="once-again" onClick="onceAgain()">もう一度 <i class="fa-solid fa-repeat"></i><br>（ctrl+Back）</span>
-    <span class="btn btn--blue btn--radius" id="next" onClick="nextQuestion()">次へ <i class="fa-solid fa-arrow-right-long"></i><br>（shift+Enter）</span>
+    <span class="btn btn--blue btn--radius" id="hidden">日本語訳を見る  <i class="fa-solid fa-toggle-on"></i><br>（Enter）</span>
+    <span class="btn btn--blue btn--radius" id="once-again-audio">再生する <i class="fa-solid fa-microphone"></i><br>（space）</span>
+    <span class="btn btn--blue btn--radius" id="hint-display">1文字ヒント <i class="fa-solid fa-question"></i><br>（shift+Back）</span>
+    <span class="btn btn--blue btn--radius" id="repeat">もう一度 <i class="fa-solid fa-repeat"></i><br>（ctrl+Back）</span>
+    <span class="btn btn--blue btn--radius" id="next-question">次へ <i class="fa-solid fa-arrow-right-long"></i><br>（shift+Enter）</span>
   </div>
 </div>
+<script>
+  window.RANDUM_SENTENCE_URL_API = "{{ RANDUM_SENTENCE_URL_API }}";
+</script>
 {% endblock %}

@@ -14,7 +14,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HLPKKVHQE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-4HLPKKVHQE');
@@ -30,7 +30,7 @@
 
   {% block content %}{% endblock %}
 
-  <script src="{% static 'ts/main.ts' %}"></script>
+  <script src="{% static 'js/App.js' %}" type="module"></script>
   {% block extrascripts %}{% endblock %}
 </body>
 
