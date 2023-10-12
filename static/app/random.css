@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-  margin:4rem 0rem;
+  margin: 4rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,8 +12,10 @@ body {
   font-weight: 600;
   padding: 1rem 4rem 1rem 4rem;
   border-radius: 0.8rem;
-  width: 100%; /* from 1000px to 100% */
-  max-width: 90%; /* keep this to prevent over-sizing */
+  width: 100%;
+  /* from 1000px to 100% */
+  max-width: 90%;
+  /* keep this to prevent over-sizing */
   min-height: 520px;
   max-width: 90%;
   box-shadow: 1px 5px 6px rgb(80, 80, 80)
@@ -25,7 +27,7 @@ body {
 }
 
 .english-display,
-.open-here{
+.open-here {
   margin: 0.5rem 1rem;
   font-size: 1.3rem;
 }
@@ -35,11 +37,11 @@ body {
 }
 
 .question-display,
-.translaton-display{
+.translaton-display {
   height: 120px;
   background: linear-gradient(to left top,
-    var(--secondary-color),
-    white);
+      var(--secondary-color),
+      white);
   border-radius: 0.8rem;
   box-shadow: 2px 2px 2px 2px var(--main-color);
   margin-top: auto;
@@ -47,17 +49,22 @@ body {
   width: 100%;
 }
 
-.open-here{
-  display:none;
+.open-here {
+  display: none;
 }
 
 .box {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr; /* 3列に分割 */
-  grid-template-rows: 1fr 1fr;    /* 2行に分割 */
-  gap: 0.6rem;                      /* グリッドアイテム間の隙間を設定 */
-  justify-items: center;          /* アイテムを各セルの中央に配置 */
-  align-items: center;            /* アイテムを各セルの中央に配置 */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 3列に分割 */
+  grid-template-rows: 1fr 1fr;
+  /* 2行に分割 */
+  gap: 0.6rem;
+  /* グリッドアイテム間の隙間を設定 */
+  justify-items: center;
+  /* アイテムを各セルの中央に配置 */
+  align-items: center;
+  /* アイテムを各セルの中央に配置 */
   margin-top: auto;
 }
 
@@ -89,7 +96,7 @@ button.btn {
 a.btn--blue {
   color: white;
   background-color: var(--main-color);
-  width:15rem;
+  width: 15rem;
 }
 
 .btn--blue:hover,
@@ -119,12 +126,12 @@ a.btn--radius {
   }
 
   .question-display,
-  .translaton-display{
+  .translaton-display {
     height: 150px;
   }
 
   .english-display,
-  .open-here{
+  .open-here {
     font-size: 1.4rem;
   }
 }
@@ -134,34 +141,53 @@ a.btn--radius {
     overflow: auto;
     height: 100%;
   }
+
   .header {
     top: 0.2rem;
-    font-size: 2.0rem;
+    font-size: 1.5rem;
   }
+
   .container {
-    margin-top:4rem;
+    margin-top: 4rem;
     padding: 1rem 2rem;
   }
+
+  .explanation {
+    font-size: 0.85rem;
+  }
+
   .question-display,
   .translaton-display {
     margin-bottom: 1rem;
   }
+
   .english-display,
-  .open-here{
+  .open-here {
     height: 150px;
-    font-size: 1.0rem;
+    font-size: 0.85rem;
   }
+
   .box {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+
   .btn,
   a.btn,
   button.btn {
     font-size: 0.7rem;
     font-weight: 600;
   }
+
   .btn--blue,
   a.btn--blue {
-    width:100%;
+    width: 100%;
+  }
+
+  .text-hide,
+  .text-once-again-audio,
+  .text-hint-display,
+  .text-repeat,
+  .text-next-question {
+    display: none;
   }
 }

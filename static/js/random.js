@@ -1,6 +1,6 @@
 import { RANDUM_SENTENCE_URL_API, exclude_pattern, open_text, close_text } from './constants.js';
 
-export class App {
+export class Random {
   constructor() {
     this.typingInput = document.getElementById("typingInput");
     this.openHere = document.getElementById("openHere");
@@ -193,4 +193,4 @@ export class App {
   }
 }
 
-new App();
+new Random();

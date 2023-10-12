@@ -3,7 +3,7 @@
 :root {
   --main-color: rgb(40, 80, 250);
   --secondary-color: rgb(240, 248, 254);
-  --backgroud-color:rgb(150, 183, 255);
+  --background-color:rgb(150, 183, 255);
 }
 
 * {
@@ -21,7 +21,7 @@ body {
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(to left top,
-      var(--backgroud-color),
+      var(--background-color),
       white);
   background-attachment: fixed;
   font-family: "Poppins", sans-serif;

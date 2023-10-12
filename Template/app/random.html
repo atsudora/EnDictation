@@ -25,14 +25,15 @@
     <span class="open-here" id="openHere"></span>
   </div>
   <div class="box">
-    <span class="btn btn--blue btn--radius" id="hidden">日本語訳を見る  <i class="fa-solid fa-toggle-on"></i><br>（Enter）</span>
-    <span class="btn btn--blue btn--radius" id="once-again-audio">再生する <i class="fa-solid fa-microphone"></i><br>（space）</span>
-    <span class="btn btn--blue btn--radius" id="hint-display">1文字ヒント <i class="fa-solid fa-question"></i><br>（shift+Back）</span>
-    <span class="btn btn--blue btn--radius" id="repeat">もう一度 <i class="fa-solid fa-repeat"></i><br>（ctrl+Back）</span>
-    <span class="btn btn--blue btn--radius" id="next-question">次へ <i class="fa-solid fa-arrow-right-long"></i><br>（shift+Enter）</span>
+    <span class="btn btn--blue btn--radius" id="hidden"><span class="text-hide">日本語訳を見る</span><i class="fa-solid fa-toggle-on"></i><br><span class="text-hide">（Enter）</span></span>
+    <span class="btn btn--blue btn--radius" id="once-again-audio"><span class="text-once-again-audio">再生する</span><i class="fa-solid fa-microphone"></i><br><span class="text-once-again-audio">（space）</span></span>
+    <span class="btn btn--blue btn--radius" id="hint-display"><span class="text-hint-display">1文字ヒント</span><i class="fa-solid fa-question"></i><br><span class="text-hint-display">（shift+Back）</span></span>
+    <span class="btn btn--blue btn--radius" id="repeat"><span class="text-repeat">もう一度</span><i class="fa-solid fa-repeat"></i><br><span class="text-repeat">（ctrl+Back）</span></span>
+    <span class="btn btn--blue btn--radius" id="next-question"><span class="text-next-question">次へ</span><i class="fa-solid fa-arrow-right-long"></i><br><span class="text-next-question">（shift+Enter）</span></span>
   </div>
 </div>
 <script>
   window.RANDUM_SENTENCE_URL_API = "{{ RANDUM_SENTENCE_URL_API }}";
 </script>
+<script src="{% static 'js/random.js' %}" type="module"></script>
 {% endblock %}
