@@ -134,6 +134,7 @@ export class Random {
 
     for (const element of this.englishDisplay.children) {
       element.style.display = 'none';
+      element.style.color = "black";
     }
     this.currentCharacterIndex = 0;
   }

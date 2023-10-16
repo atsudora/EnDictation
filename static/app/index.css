@@ -16,9 +16,10 @@ body {
 }
 
 .explanation-box {
-  margin:2.0rem 0rem;
+  margin: 2.0rem 0rem;
   border-radius: 0.8rem;
-  width: 100%; /* keep this to prevent over-sizing */
+  width: 100%;
+  /* keep this to prevent over-sizing */
   min-height: 280px;
   max-height: 600px;
   font-size: 1.6rem;
@@ -27,7 +28,7 @@ body {
 }
 
 .lesson-box {
-  margin:2rem 0rem;
+  margin: 2rem 0rem;
   color: rgb(46, 46, 46);
   font-size: 1.2rem;
   text-align: center;
@@ -44,7 +45,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   background-color: var(--main-color);
-  margin-top:1.0rem;
+  margin-top: 1.0rem;
   border-radius: 0.5rem;
   height: 3rem;
 }
@@ -138,9 +139,14 @@ body {
   .container {
     width: 100%;
   }
-  
+
   .explanation-box {
     min-height: 280px;
     max-height: 1200px;
+    padding: 1rem 2rem;
+  }
+
+  .lesson-box {
+    padding: 1rem 2rem;
   }
 }
